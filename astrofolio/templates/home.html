@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% if current_user.is_authenticated %}
+    <div class="new-post">
+      <a href="{{ url_for('new_post') }}">New Post</a>
+    </div>
+  {% endif %}
+  <div class="posts-container">
+    {% for post in posts %}
+      <article class="blog-entry">
+        <header>
+          <h1><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h1>
+          <p><small>{{ post.date }}</small></p>
+        </header>
+        <a href="{{ url_for('post', post_id=post.id) }}">
+          <img class="home-image" src="{{ url_for('static', filename='blog_pics/' + post.image) }}">
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+{% endblock content %}

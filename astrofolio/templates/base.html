@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% if title %}
+      <title>Bortle 9 {{ title }}</title>
+    {% else %}
+      <title>Bortle 9 Astrofolio</title>
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <header>
+    <h1 class="banner-text">Bortle 9 Astrofolio</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        {% if current_user.is_authenticated %}
+          <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
+          <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
+
+      </ul>
+    </nav>
+  </header>
+  <body>
+    {% block content %}{% endblock %}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% if current_user.is_authenticated %}
+  <div class="admin-options">
+    <div class="delete-post">
+      <a href="{{ url_for('delete_post', post_id=post.id) }}">Delete Post</a>
+    </div>
+    <div class="edit-post">
+      <a href="{{ url_for('edit_post', post_id=post.id) }}">Edit Post</a>
+    </div>
+  </div>
+  {% endif %}
+  <div>
+    <article>
+      <header style="text-align: center; margin-top: 30px;">
+        <h1>{{ post.title }}</h1>
+        <p style="font-weight: bold;"><small>{{ post.date }}</small></p>
+      </header>
+      <div class="image-wrapper">
+        <a href="{{ url_for('static', filename='blog_pics/' + post.image) }}" target="_blank">
+          <img id="main-image" class="post-image" src="{{ url_for('static', filename='blog_pics/' + post.image) }}">
+        </a>
+      </div>
+      <div class="fullres-text-wrapper">
+        <strong><small>Click on image for full resolution</small></strong>
+      </div>
+      <div class="post-wrapper">
+        <p>{{ post.content }}</p>
+      </div>
+    </article>
+  </div>
+{% endblock content %}
