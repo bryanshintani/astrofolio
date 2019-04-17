@@ -8,4 +8,6 @@ pyvenv.cfg
 astrofolio/*.cfg
 site.db
 .ftpconfig
-
+astrofolio/users/__pycache__/
+astrofolio/posts/__pycache__/
+astrofolio/main/__pycache__/

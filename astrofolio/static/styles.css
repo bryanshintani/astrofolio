@@ -56,6 +56,8 @@ a {
   flex: 1 1 33%;
   margin-top: 0;
   margin-bottom: 40px;
+  justify-content: center;
+  align-items: center;
 }
   .blog-entry h1 {
     margin-bottom: 0;
@@ -72,15 +74,17 @@ a {
       font-weight: bold;
       text-align: center;
     }
-  .home-image {
-    display: block;
-    max-width: 300px;
-    max-height: 300px;
-    width: auto;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+  .image-anchor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+    .home-image {
+      max-width: 300px;
+      max-height: 300px;
+      width: auto;
+      height: auto;
+    }
 
 /* LOGIN PAGE */
 .form-login-container {
