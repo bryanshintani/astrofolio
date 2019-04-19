@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+
 
 from astrofolio import create_app
 
