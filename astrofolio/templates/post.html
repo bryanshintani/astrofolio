@@ -18,9 +18,7 @@
       </header>
       <div class="image-wrapper">
         <a href="{{ url_for('static', filename='blog_pics/' + post.image) }}" target="_blank">
-          <div class="image-container">
-            <img id="main-image" class="post-image" src="{{ url_for('static', filename='blog_pics/' + post.image) }}">
-          </div>
+          <img id="main-image" class="post-image" src="{{ url_for('static', filename='blog_pics/' + post.image) }}">
         </a>
       </div>
       <div class="fullres-text-wrapper">

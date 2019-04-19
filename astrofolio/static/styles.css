@@ -150,15 +150,11 @@ a {
   justify-content: center;
 }
 
-.image-container {
+.post-image {
+  width: auto;
+  height: auto;
   max-width: 750px;
   max-height: 750px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.post-image {
-  
 }
 
 .fullres-text-wrapper {
